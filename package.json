@@ -1,7 +1,7 @@
 {
-  "name": "chain_backend",
+  "name": "typescript-base-project",
   "version": "1.0.0",
-  "description": "The backend of the Rebirth_app",
+  "description": "A typescript base project",
   "main": "index.js",
   "scripts": {
     "start": "nodemon -inspect --config \"./scripts/nodemon.json\"",
