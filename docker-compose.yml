@@ -1,0 +1,19 @@
+version: "3.8"
+
+volumes:
+  node_modules:
+#chain_backend has to be modified
+services:
+  backend:
+    container_name: backend
+    command: ["npm", "run", "start"]
+    working_dir: "/chain_backend"
+    build:
+      context: ./chain_backend
+      dockerfile: Docker/Dockerfile-Node
+    volumes:
+      - ./chain_backend:/chain_backend
+      # Prevents linux node modules overwriting other os system node modules
+      - ./chain_backend/node_modules:/chain_backend/node_modules
+    ports:
+      - "3100:3100"

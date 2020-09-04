@@ -1,0 +1,10 @@
+FROM node:14-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN apk add --update --no-cache --virtual .build-deps g++ make python postgresql-client && \
+    npm ci
+
+CMD [ "npm", "run", "start" ]
